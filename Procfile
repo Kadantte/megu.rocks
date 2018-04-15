@@ -1,1 +1,1 @@
-worker: pip install -r requirements.txt && python bot.py
+worker: pip install -r requirements.txt --user && python bot.py
