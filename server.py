@@ -1,13 +1,9 @@
 import os
 from sanic import Sanic
 from sanic import response
-import random
-import weeb
+import random, os
 
 app = Sanic(__name__)
-weebkey = os.environ.get('WEEBSH', None)
-assert weebkey
-weebsh = weeb.Client(token=weebkey, user_agent="megumin-api")
 chants = [
         'Darkness blacker than black and darker than dark, I beseech thee, combine with my deep crimson. The time of awakening cometh. Justice, fallen upon the infallible boundary, appear now as an intangible distortions! I desire for my torrent of power a destructive force: a destructive force without equal! Return all creation to cinders,and come frome the abyss! Explosion!',
 	'Oh, blackness shrouded in light, Frenzied blaze clad in night, In the name of the crimson demons, let the collapse of thine origin manifest. Summon before me the root of thy power hidden within the lands of the kingdom of demise Explosion!',
@@ -20,9 +16,9 @@ chants = [
 
 @app.route('/explosion') # EXPLOSION!!!
 async def explosion(request):
-    image = await weebsh.get_image(imgtype='megumin')
     chant = random.choice(chants)
-    return response.json({'chant': chant}) # 'img': image[0]})
+    image = random.choice(os.listdir(path='/var/www/html/megumin'))
+    return response.json({'chant': chant, 'img': f'https://cdn.torque.ink/megumin/{image}'})
 
 if __name__ == '__main__':
     app.run(port=8000)
