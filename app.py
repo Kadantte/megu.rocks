@@ -1,8 +1,8 @@
 import os
-from sanic import Sanic
-from sanic.response import json
+from flask import Flask
+from flask import jsonify
 
-app = Sanic()
+app = Flask(__name__)
 weebkey = os.environ['WEEBSH']
 
 @app.route('/explosion') # EXPLOSION!!!
