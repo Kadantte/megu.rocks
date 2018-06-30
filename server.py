@@ -11,8 +11,11 @@ chants = [
 	'Crimson-black blaze, king of myriad worlds, though I promulgate the laws of nature, I am the alias of destruction incarnate in accordance with the principles of creation. Let the hammer of eternity descend unto me! ... Burn to ashes within the crimson.',
 	'By my efflux of deep crimson, topple this white world!',
 	'The tower of rebellion creeps upon man\'s world, The unspoken faith displayed before me, The time has come! Now, awaken from your slumber, and by my madness, be wrought!',
-	'Detonation... Detonation... Detonation... Wielder of the most glorious, powerful, and grand explosion magic, My name is Megumin. The blow that I am given to strike turns a blind eye to the fate of my kindred, rendering all hope of rebirth and anguish, and the model by which all forces are judged! Pitiful creature... Synchronize yourself with the red smoke, and atone in a surge of blood!'
-        ]
+	'Detonation... Detonation... Detonation... Wielder of the most glorious, powerful, and grand explosion magic, My name is Megumin. The blow that I am given to strike turns a blind eye to the fate of my kindred, rendering all hope of rebirth and anguish, and the model by which all forces are judged! Pitiful creature... Synchronize yourself with the red smoke, and atone in a surge of blood!',
+        'Burst forth, explosion!',
+	'Explosion!!!',
+	'My name is Megumin, I am a user of the finest magic crimson demons possess, and I command explosion magic. Behold my power! Explosion!'
+]
 
 @app.route('/explosion') # EXPLOSION!!!
 async def explosion(request):
