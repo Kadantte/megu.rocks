@@ -20,7 +20,7 @@ chants = [
 @app.route('/explosion') # EXPLOSION!!!
 async def explosion(request):
     chant = random.choice(chants)
-    image = random.choice(os.listdir(path='/var/www/html/megumin'))
+    image = random.choice(os.listdir(path=os.environ.get('MEGU_DIRECTORY', '/var/www/html/megumin')))
     return response.json({'chant': chant, 'img': f'https://cdn.megu.rocks/megumin/{image}'})
 
 if __name__ == '__main__':
