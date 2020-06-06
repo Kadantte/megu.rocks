@@ -21,7 +21,7 @@ chants = [
 async def explosion(request):
     chant = random.choice(chants)
     image = random.choice(os.listdir(path='/var/www/html/megumin'))
-    return response.json({'chant': chant, 'img': f'https://cdn.torque.ink/megumin/{image}'})
+    return response.json({'chant': chant, 'img': f'https://cdn.megu.rocks/megumin/{image}'})
 
 if __name__ == '__main__':
     app.run(port=8000)
