@@ -21,7 +21,8 @@ chants = [
 async def explosion(request):
     chant = random.choice(chants)
     image = random.choice(os.listdir(path=os.environ.get('MEGU_DIRECTORY', '/var/www/html/megumin')))
-    return response.json({'chant': chant, 'img': f'https://cdn.megu.rocks/megumin/{image}'})
+    safe = "safebooru" in image
+    return response.json({'chant': chant, 'img': f'https://cdn.megu.rocks/megumin/{image}', 'safe': safe})
 
 if __name__ == '__main__':
     app.run(port=8000)
